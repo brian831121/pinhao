@@ -1,0 +1,44 @@
+body {
+    font-family: 'cwTeXYen', sans-serif;
+}
+
+.card-title {
+    color: rgb(240, 176, 78);
+}
+
+#wrapper {
+    position: relative;
+}
+
+.table td,
+.table th,
+td,
+th,
+tr {
+    vertical-align: middle;
+    border: none;
+    vertical-align:middle
+}
+
+.un-title {
+    display: block;
+}
+
+.lg-title {
+    display: none;
+}
+
+.item-align {
+    align-items: center;
+}
+
+.accordion .card-header:after {
+    font-family: 'FontAwesome';
+    content: "\f077";
+    float: right;
+}
+
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f078";
+}

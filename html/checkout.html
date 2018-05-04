@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Checkout</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FontsStyle CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
+    <!-- Mediaquery CSS -->
+    <link rel="stylesheet" href="../css/mediaquery.css">
+     <!-- Template CSS -->
+     <link rel="stylesheet" href="../css/template.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id='wrapper' class="row">
+            <div id='content' class="col-md-12 col-lg-8">
+
+                <div class="card border-light mb-3">
+                    <div class="card-header">
+                        購物車內容
+                    </div>
+                    <div class="card-body">
+                        <table class="table border-light">
+                            <thead>
+                                <tr>
+                                    <th scope="col">商品(6件商品)</th>
+
+                                    <th scope="col">單價</th>
+                                    <th scope="col">數量</th>
+                                    <th scope="col">小計</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr scope="row">
+                                    <td>
+                                        <img width="120px" height="120px" src="https://www.sugar.com.tw/www/apps/smarty/tpl/default/tmp/product/280x390/prod15210067272083.png"
+                                            alt="" style="vertical-align:middle width=50px;">
+                                        <a class="font-weight-bold">蛋糕</a>
+                                    </td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                </tr>
+                                <tr scope="row">
+                                    <td>
+                                        <img width="120px" height="120px" src="https://www.sugar.com.tw/www/apps/smarty/tpl/default/tmp/product/280x390/prod15210067272083.png"
+                                            alt="" style="vertical-align:middle width=50px;">
+                                        <a class="font-weight-bold">蛋糕</a>
+                                    </td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                </tr>
+                                <tr scope="row">
+                                    <td>
+                                        <img width="120px" height="120px" src="https://www.sugar.com.tw/www/apps/smarty/tpl/default/tmp/product/280x390/prod15210067272083.png"
+                                            alt="" style="vertical-align:middle width=50px;">
+                                        <a class="font-weight-bold">蛋糕</a>
+                                    </td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                    <td>Mark</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card border-light mb-3">
+                    <div class="card-header">
+                        會員專區
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="non-member">非會員購買</label>
+                                    <input type="mail" class="form-control" name="non-member" id="" aria-describedby="helpId" placeholder="聯絡信箱">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-light mb-3">
+                    <div class="card-header">
+                        收件人資料
+                    </div>
+                    <div class="card-body">
+                        <form action="" name="reg_testdate">
+                            <div class="form-group">
+                                <label for="">歷史收件人紀錄</label>
+                                <select class="custom-select" name="" id="">
+                                    <option selected>Select one</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label for="name">姓名</label>
+                                    <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="收件人姓名">
+                                </div>
+                                <div class="col">
+                                    <label for="phone">連絡電話</label>
+                                    <input type="text" class="form-control" name="phone" id="" aria-describedby="helpId" placeholder="收件人電話">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-type">聯絡方式</label>
+                                <select class="custom-select" name="content-type" id="">
+                                    <option selected>Select one</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label for="date">配送日期</label>
+                                    <div class="form-inline">
+                                        <label>西元</label>
+                                        <select name="YYYY" onchange="YYYYDD(this.value)">
+                                            <option value=""></option>
+                                        </select>
+                                        <label for="YYYY">年</label>
+                                        <select name="MM" onchange="MMDD(this.value)">
+                                            <option value=""></option>
+                                        </select>
+                                        <label for="MM">月</label>
+                                        <select name="DD">
+                                            <option value=""></option>
+                                        </select>
+                                        <label for="DD">日</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="time">配送時段</label>
+                                    <div class="form-inline">
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked>早上(09:00~13:00)
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline" id="optionsRadios4" value="option2">下午(14:00~18:00)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="note">備註</label>
+                                <input type="text" class="form-control" name="note" id="" placeholder="備註">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card border-light mb-7">
+                        <div class="card-header">
+                            付款方式
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>結帳須知</label>
+                                <p class="bg-light text-dark">Secondary background color.</p>
+                            </div>
+                            <div class="form-group">
+                                <label>電子發票</label>
+                                <div class="form-inline row">
+                                    <label class="checkbox-inline col">
+                                        <input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="option1" checked>會員載具(個人)
+                                    </label>
+                                    <label class="checkbox-inline col">
+                                        <input type="radio" name="optionsRadiosinline" id="optionsRadios2" value="option2">公司用(統編)
+                                    </label>
+                                    <label class="checkbox-inline col">
+                                        <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option3">手機載具
+                                    </label>
+                                    <label class="checkbox-inline col">
+                                        <input type="radio" name="optionsRadiosinline" id="optionsRadios4" value="option4">自然人憑證
+                                    </label>
+                                    <label class="checkbox-inline col">
+                                        <input type="radio" name="optionsRadiosinline" id="optionsRadios5" value="option5">捐贈社福機構
+                                    </label>
+                                </div>
+                                <p class="bg-light text-dark">Secondary background color.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='sidebar-left' class="col-md-12 col-lg-4">
+                <table class="table">
+
+                    <tr>
+                        <th>結帳金額</th>
+                    </tr>
+
+                    <tbody>
+                        <tr>
+                            <td scope="row">商品金額總計</td>
+                            <td align="right">4860</td>
+
+                        </tr>
+                        <tr>
+                            <td scope="row">優惠碼</td>
+                            <td align="right">-NT$1000</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">運費</td>
+                            <td align="right">NT$150</td>
+
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td scope="row">合計金額</td>
+                            <td align="right">NT$4010</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>    
+
+        function YYYYMMDDstart() {
+            MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            //先给年下拉框赋内容     
+            var y = new Date().getFullYear();
+            for (var i = (y - 30); i < (y + 30); i++) //以今年为准，前30年，后30年     
+                document.reg_testdate.YYYY.options.add(new Option(" " + i + " 年", i));
+
+            //赋月份的下拉框     
+            for (var i = 1; i < 13; i++)
+                document.reg_testdate.MM.options.add(new Option(" " + i + " 月", i));
+
+            document.reg_testdate.YYYY.value = y;
+            document.reg_testdate.MM.value = new Date().getMonth() + 1;
+            var n = MonHead[new Date().getMonth()];
+            if (new Date().getMonth() == 1 && IsPinYear(YYYYvalue)) n++;
+            writeDay(n); //赋日期下拉框Author:meizz     
+            document.reg_testdate.DD.value = new Date().getDate();
+        }
+        if (document.attachEvent)
+            window.attachEvent("onload", YYYYMMDDstart);
+        else
+            window.addEventListener('load', YYYYMMDDstart, false);
+        function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年)     
+        {
+            var MMvalue = document.reg_testdate.MM.options[document.reg_testdate.MM.selectedIndex].value;
+            if (MMvalue == "") { var e = document.reg_testdate.DD; optionsClear(e); return; }
+            var n = MonHead[MMvalue - 1];
+            if (MMvalue == 2 && IsPinYear(str)) n++;
+            writeDay(n)
+        }
+        function MMDD(str)   //月发生变化时日期联动     
+        {
+            var YYYYvalue = document.reg_testdate.YYYY.options[document.reg_testdate.YYYY.selectedIndex].value;
+            if (YYYYvalue == "") { var e = document.reg_testdate.DD; optionsClear(e); return; }
+            var n = MonHead[str - 1];
+            if (str == 2 && IsPinYear(YYYYvalue)) n++;
+            writeDay(n)
+        }
+        function writeDay(n)   //据条件写日期的下拉框     
+        {
+            var e = document.reg_testdate.DD; optionsClear(e);
+            for (var i = 1; i < (n + 1); i++)
+                e.options.add(new Option(" " + i + " 日", i));
+        }
+        function IsPinYear(year)//判断是否闰平年     
+        { return (0 == year % 4 && (year % 100 != 0 || year % 400 == 0)); }
+        function optionsClear(e) {
+            e.options.length = 1;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- FontsStyle CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
+
+  <style>
+    body {
+      font-family: 'cwTeXYen', sans-serif;
+    }
+
+    .style-bgcolor {
+      background-color: rgb(228, 106, 93);
+    }
+
+    .text-color {
+      color: rgb(228, 106, 93);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+      <img class="card-img-top" src="../img/love.png" alt="">
+      <div class="card-body text-white style-bgcolor">
+        <h4 class="card-title">語音傳情</h4>
+        <p class="card-text">把不敢面對面說的話，錄音透過QRcode傳送給對方吧</p>
+      </div>
+      <div class="card-body">
+        <div class="form-inline">
+          <h4 class="card-title text-color">步驟一 </h4>
+          <h4 class="card-title">&nbsp;擇一勾選</h4>
+        </div>
+        <div class="control-group">
+          <div class="row">
+            <label class="radio col-1" for="radio-1">
+              <input type="radio" name="discount" id="radio-1" value="OrderNumber" checked="checked">
+            </label>
+            <div class="input-append col-10">
+              <input type="text" name="radio-1-amount" id="radio-1-amount" class="input-small OrderNumber form-control" placeholder="訂單編號">
+              <small id="helpId" class="form-text text-danger ">在您在品好乳酪購買的蛋糕附上此語音QRcode的卡片。</small>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <label class="radio col-1" for="radio-2">
+              <input type="radio" name="discount" id="radio-2" value="PhoneNumber">
+            </label>
+            <div class="input-append col-10">
+              <input type="text" name="radio-2-amount" id="radio-2-amount" class="input-small PhoneNumber form-control" placeholder="電話號碼"
+                disabled="disabled">
+              <small id="helpId" class="form-text text-danger">*直接傳送對方的LINE。</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-inline">
+          <h4 class="card-title text-color">步驟二 </h4>
+          <h4 class="card-title">&nbsp;錄音</h4>
+        </div>
+        <div class="row ">
+          <div class="col-sm-6">
+              <label class="d-flex justify-content-center">錄音</label>      
+          </div>
+          <div class="col-sm-6">
+              <label class="d-flex justify-content-center">錄音</label>       
+        </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-inline">
+          <h4 class="card-title text-color">步驟三 </h4>
+          <h4 class="card-title">&nbsp;輸出並傳送 </h4>
+        </div>
+        <button type="button" name="" id="" class="btn  btn-lg btn-block text-white style-bgcolor">輸出成QR code並傳送</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>$(function () {
+      $("#radio-1, #radio-2").click(function () {
+
+        // get the value of this radio button ("OrderNumber" or "PhoneNumber")
+        var value = $(this).val();
+
+        // find all text fields...
+        $(this).closest(".control-group").find("input[type=text]")
+
+          // ...and disable them...
+          .attr("disabled", "disabled")
+
+          // ...then find the text field whose class name matches
+          // the value of this radio button ("OrderNumber" or "PhoneNumber")...
+          .end().find("." + value)
+
+          // ...and enable that text field
+          .removeAttr("disabled")
+          .end();
+      });
+    });</script>
+</body>
+
+</html>

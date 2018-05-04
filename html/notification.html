@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Notification</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- font-awesome CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- FontsStyle CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
+
+  <style>
+    body {
+      font-family: 'cwTeXYen', sans-serif;
+    }
+
+    .accordion .card-header:after {
+      font-family: 'FontAwesome';
+      content: "\f077";
+      float: right;
+    }
+
+    .accordion .card-header.collapsed:after {
+      /* symbol for "collapsed" panels */
+      content: "\f078";
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <img src="http://i.epochtimes.com/assets/uploads/2017/09/Fotolia_80362106_Subscription_Monthly_M-600x400.jpg" class="img-fluid"
+        alt="Responsive image">
+      <div class="card-body">
+        <h5 class="card-title">個人節日提醒設定</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="card-title">
+          我的紀念日
+        </a>
+      </div>
+      <div class="card-body">
+        <form name="reg_testdate">
+          <div class="form-group">
+            <label for="festival">節日</label>
+            <input type="text" class="form-control" name="festival" id="" placeholder="想記錄的節日:父母生日、伴侶生日、結婚紀念日...等">
+          </div>
+          <div class="form-group">
+            <label for="Date">日期</label>
+            <div class="form-inline">
+
+              <label>西元</label>
+              <select name="YYYY" onchange="YYYYDD(this.value)">
+                <option value=""></option>
+              </select>
+              <label for="YYYY">年</label>
+              <select name="MM" onchange="MMDD(this.value)">
+                <option value=""></option>
+              </select>
+              <label for="MM">月</label>
+              <select name="DD">
+                <option value=""></option>
+              </select>
+              <label for="DD">日</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="human">紀念日對象</label>
+            <input type="text" class="form-control" name="human" id="" placeholder="姓名或暱稱">
+          </div>
+          <div class="form-group">
+            <label for="human-rel">與紀念日對象關係</label>
+            <input type="text" class="form-control" name="human-rel" id="" placeholder="選項">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="accordion" class="accordion">
+      <div class="card">
+        <div class="card-header collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <a class="card-title">
+            我的紀念日2
+          </a>
+        </div>
+        <div id="collapseTwo" class="collapse multi-collapse">
+          <div class="card-body">
+
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <a class="card-title">
+            我的紀念日3
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse multi-collapse">
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <button type="submit" class="btn btn-danger btn-lg btn-block">送出</button>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>    
+
+    function YYYYMMDDstart() {
+      MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+      //先给年下拉框赋内容     
+      var y = new Date().getFullYear();
+      for (var i = (y - 30); i < (y + 30); i++) //以今年为准，前30年，后30年     
+        document.reg_testdate.YYYY.options.add(new Option(" " + i + " 年", i));
+
+      //赋月份的下拉框     
+      for (var i = 1; i < 13; i++)
+        document.reg_testdate.MM.options.add(new Option(" " + i + " 月", i));
+
+      document.reg_testdate.YYYY.value = y;
+      document.reg_testdate.MM.value = new Date().getMonth() + 1;
+      var n = MonHead[new Date().getMonth()];
+      if (new Date().getMonth() == 1 && IsPinYear(YYYYvalue)) n++;
+      writeDay(n); //赋日期下拉框Author:meizz     
+      document.reg_testdate.DD.value = new Date().getDate();
+    }
+    if (document.attachEvent)
+      window.attachEvent("onload", YYYYMMDDstart);
+    else
+      window.addEventListener('load', YYYYMMDDstart, false);
+    function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年)     
+    {
+      var MMvalue = document.reg_testdate.MM.options[document.reg_testdate.MM.selectedIndex].value;
+      if (MMvalue == "") { var e = document.reg_testdate.DD; optionsClear(e); return; }
+      var n = MonHead[MMvalue - 1];
+      if (MMvalue == 2 && IsPinYear(str)) n++;
+      writeDay(n)
+    }
+    function MMDD(str)   //月发生变化时日期联动     
+    {
+      var YYYYvalue = document.reg_testdate.YYYY.options[document.reg_testdate.YYYY.selectedIndex].value;
+      if (YYYYvalue == "") { var e = document.reg_testdate.DD; optionsClear(e); return; }
+      var n = MonHead[str - 1];
+      if (str == 2 && IsPinYear(YYYYvalue)) n++;
+      writeDay(n)
+    }
+    function writeDay(n)   //据条件写日期的下拉框     
+    {
+      var e = document.reg_testdate.DD; optionsClear(e);
+      for (var i = 1; i < (n + 1); i++)
+        e.options.add(new Option(" " + i + " 日", i));
+    }
+    function IsPinYear(year)//判断是否闰平年     
+    { return (0 == year % 4 && (year % 100 != 0 || year % 400 == 0)); }
+    function optionsClear(e) {
+      e.options.length = 1;
+    }
+
+  </script>
+</body>
+
+</html>
